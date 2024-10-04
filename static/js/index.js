@@ -36,7 +36,7 @@ function getCountryDetail(countryId) {
     };
 
     // Sending a POST request using fetch
-    fetch('/process_data', {
+    fetch('/load_country_detail', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

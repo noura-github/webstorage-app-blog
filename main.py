@@ -29,8 +29,8 @@ def search(ct_id, ls):
 
 
 # Route to handle AJAX POST request
-@app.route('/process_data', methods=['POST'])
-def process_data():
+@app.route('/load_country_detail', methods=['POST'])
+def load_country_detail():
     # Get JSON data from request
     data = request.get_json()
 
