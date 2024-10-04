@@ -16,7 +16,7 @@ countries = [
     {'Id': 30, 'Name': 'France', 'Capital': 'Paris', 'Population': '67M', 'Area': '551,695 km2', 'Dialing_code': '+33'},
     {'Id': 40, 'Name': 'Italy', 'Capital': 'Rome', 'Population': '58M', 'Area': '301,230 km2', 'Dialing_code': '+39'},
     {'Id': 50, 'Name': 'Spain', 'Capital': 'Madrid', 'Population': '47M', 'Area': '505,990 km2', 'Dialing_code': '+34'},
-    {'Id': 60, 'Name': 'England', 'capital': 'London', 'Population': '56M', 'Area': '130,279 km2',
+    {'Id': 60, 'Name': 'England', 'Capital': 'London', 'Population': '56M', 'Area': '130,279 km2',
      'Dialing_code': '+44'},
 ]
 
