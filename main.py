@@ -12,7 +12,7 @@ def index():
 countries = [
     {'Id': 10, 'Name': 'Austria', 'Capital': 'Vienna', 'Population': '9M', 'Area': '83,879 km2', 'Dialing_code': '+43'},
     {'Id': 20, 'Name': 'Germany', 'Capital': 'Berlin', 'Population': '84M', 'Area': '357,592 km2',
-     'Dialing code': '+49'},
+     'Dialing_code': '+49'},
     {'Id': 30, 'Name': 'France', 'Capital': 'Paris', 'Population': '67M', 'Area': '551,695 km2', 'Dialing_code': '+33'},
     {'Id': 40, 'Name': 'Italy', 'Capital': 'Rome', 'Population': '58M', 'Area': '301,230 km2', 'Dialing_code': '+39'},
     {'Id': 50, 'Name': 'Spain', 'Capital': 'Madrid', 'Population': '47M', 'Area': '505,990 km2', 'Dialing_code': '+34'},
