@@ -13,6 +13,8 @@ function loadCountry() {
   } else {
      localStorage.setItem("country", document.getElementById("selectCountry").value);
   }
+
+  onChangeCountry();
 }
 
 function onChangeCountry(){
@@ -24,7 +26,7 @@ function onChangeCountry(){
     let country_detail = localStorage.getItem(id);
     console.log("country_detail:", country_detail);
     if (country_detail){
-        createCountryDetailTable(JSON.parse(country_detail));
+        showCountryDetail(JSON.parse(country_detail));
     } else {
         getCountryDetail(document.getElementById("selectCountry").value);
     }
@@ -47,42 +49,29 @@ function getCountryDetail(countryId) {
     .then(data => {
         console.log('Success:', data);
         localStorage.setItem(data.country_detail["Id"], JSON.stringify(data.country_detail));
-        createCountryDetailTable(data.country_detail);
+        showCountryDetail(data.country_detail);
     })
     .catch((error) => {
         console.error('Error:', error);
     });
 }
 
-function createCountryDetailTable(country_detail){
+function showCountryDetail(country_detail){
     let table = document.getElementById("country_table");
     let tBody = table.getElementsByTagName('tbody')[0];
+    
+    // Clear the tbody contents to create a new row
+    tBody.innerHTML = "";
+    
     let country_name = country_detail["Name"];
-    let rouwFound = findRow(tBody, country_name);
+    let tr = document.createElement('tr');
+    addCell(tr, country_name);
+    addCell(tr, country_detail["Capital"]);
+    addCell(tr, country_detail["Population"]);
+    addCell(tr, country_detail["Area"]);
+    addCell(tr, country_detail["Dialing_code"]);
 
-    if (!rouwFound){
-        let tr = document.createElement('tr');
-        addCell(tr, country_name);
-        addCell(tr, country_detail["Capital"]);
-        addCell(tr, country_detail["Population"]);
-        addCell(tr, country_detail["Area"]);
-        addCell(tr, country_detail["Dialing_code"]);
-
-        tBody.appendChild(tr);
-    }
-}
-
-function findRow(tBody, country_name) {
-    let tableRow = tBody.getElementsByTagName('tr');
-    for (let row of tableRow){
-        let tableCell = row.getElementsByTagName('td');
-        for (let cell of tableCell){
-            if (cell.innerHTML == country_name) {
-                return true;
-            }
-        }
-    }
-    return false;
+    tBody.appendChild(tr);
 }
 
 function addCell(tr, item){
